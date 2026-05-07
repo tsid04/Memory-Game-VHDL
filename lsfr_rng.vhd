@@ -20,8 +20,7 @@ architecture Behavioral of lfsr_rng is
 
 begin
 
-    -- Example taps for 8-bit LFSR
-    -- feedback = bit7 XOR bit5 XOR bit4 XOR bit3
+
     feedback <= lfsr(7) xor lfsr(5) xor lfsr(4) xor lfsr(3);
 
     process(clk)
