@@ -108,7 +108,6 @@ begin
                 game_active <= '0';
 
             else
-                -- defaults every cycle
                 seq_clear <= '0';
                 seq_add <= '0';
                 load_seed <= '0';
