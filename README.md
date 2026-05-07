@@ -1,6 +1,6 @@
 # Nexys4 Memory Game — ECE 4250 Final Project
 
-**Chloe Imhoff, Michael Bolek, & Taqwa Siddiqui — University of Missouri-Columbia**
+**Chloe Imhoff, Michael Bolek, & Taqwa Siddiqui - University of Missouri-Columbia**
 
 This is our ECE 4250 final project, a Simon-style memory game implemented in VHDL on the Nexys4 FPGA board. The board shows a sequence of LEDs one at a time, and the player has to repeat it back using the slide switches. Each round adds one more step to the sequence, and the game runs for 10 rounds total.
 
@@ -41,7 +41,7 @@ A few things to know:
 
 The core of the project is `memory_game_fsm.vhd`, which drives everything. When you hit start, it seeds the LFSR and builds an initial 4-step sequence, then cycles through displaying it on the LEDs and waiting for your input. If you get a round right it flashes PASS and adds another step; if you're wrong it goes to a FAIL state and waits for a reset.
 
-The LFSR (`lfsr_rng.vhd`) runs continuously on every clock edge so the sequence is different each game. The switch input handler (`switch_input.vhd`) was one of the trickier parts — we went through a few iterations figuring out how to make it feel natural to use. We settled on a 3-state debounce FSM that waits for a switch to be stable for half a second before registering it, then waits for the player to release it before accepting the next input.
+The LFSR (`lfsr_rng.vhd`) runs continuously on every clock edge so the sequence is different each game. The switch input handler (`switch_input.vhd`) was one of the trickier parts, we went through a few iterations figuring out how to make it feel natural to use. We settled on a 3-state debounce FSM that waits for a switch to be stable for half a second before registering it, then waits for the player to release it before accepting the next input.
 
 The 7-segment display multiplexes all 8 digits using a refresh counter, and shows either the round number during gameplay or a PASS/FAIL/WIN message at the end of each round.
 
