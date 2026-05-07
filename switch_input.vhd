@@ -28,7 +28,7 @@ architecture Behavioral of switch_input is
 
     signal selected_reg : integer range 0 to 7 := 0;
 
-    -- Count how many switches are ON
+    
     function count_ones(s : std_logic_vector(7 downto 0)) return integer is
         variable count : integer := 0;
     begin
@@ -40,7 +40,7 @@ architecture Behavioral of switch_input is
         return count;
     end function;
 
-    -- Find which switch is ON
+    
     function get_index(s : std_logic_vector(7 downto 0)) return integer is
         variable index_val : integer := 0;
     begin
@@ -94,7 +94,7 @@ begin
                         waiting_for_release <= '0';
 
                         if switches /= last_switches then
-                            -- switches changed again, restart stability check
+                            
                             last_switches <= switches;
                             stable_counter <= 0;
 
