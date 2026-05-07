@@ -2,7 +2,7 @@
 
 **Chloe Imhoff, Michael Bolek, & Taqwa Siddiqui — University of Missouri-Columbia**
 
-This is our ECE 4250 final project, a Simon-style memory game implemented in VHDL on the Digilent Nexys4 DDR FPGA board. The board shows a sequence of LEDs one at a time, and the player has to repeat it back using the slide switches. Each round adds one more step to the sequence, and the game runs for 10 rounds total.
+This is our ECE 4250 final project, a Simon-style memory game implemented in VHDL on the Nexys4 FPGA board. The board shows a sequence of LEDs one at a time, and the player has to repeat it back using the slide switches. Each round adds one more step to the sequence, and the game runs for 10 rounds total.
 
 ---
 
