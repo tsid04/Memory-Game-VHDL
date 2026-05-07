@@ -4,17 +4,17 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity clock_divider is
     Port (
-        clk      : in  std_logic;  -- 100 MHz clock from Nexys4
+        clk      : in  std_logic;  
         reset    : in  std_logic;
 
-        tick_1hz : out std_logic;  -- 1 second pulse
-        tick_500ms : out std_logic -- 0.5 second pulse
+        tick_1hz : out std_logic;  
+        tick_500ms : out std_logic 
     );
 end clock_divider;
 
 architecture Behavioral of clock_divider is
 
-    -- 100 MHz clock ? 100,000,000 cycles = 1 second
+    
     constant ONE_SEC_COUNT : integer := 100000000;
     constant HALF_SEC_COUNT : integer := 50000000;
 
@@ -33,7 +33,7 @@ begin
                 tick_500ms <= '0';
 
             else
-                -- 1 second tick
+                
                 if count_1hz = ONE_SEC_COUNT - 1 then
                     count_1hz <= 0;
                     tick_1hz <= '1';
@@ -42,7 +42,7 @@ begin
                     tick_1hz <= '0';
                 end if;
 
-                -- 0.5 second tick
+                
                 if count_500ms = HALF_SEC_COUNT - 1 then
                     count_500ms <= 0;
                     tick_500ms <= '1';
