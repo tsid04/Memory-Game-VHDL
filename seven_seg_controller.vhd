@@ -27,7 +27,7 @@ architecture Behavioral of seven_seg_controller is
     type seg_array is array (0 to 7) of std_logic_vector(6 downto 0);
     signal digits : seg_array := (others => "1111111");
 
-    -- 7-seg patterns, active low
+    
     constant BLANK : std_logic_vector(6 downto 0) := "1111111";
     constant ZERO  : std_logic_vector(6 downto 0) := "1000000";
     constant ONE   : std_logic_vector(6 downto 0) := "1111001";
@@ -68,7 +68,7 @@ architecture Behavioral of seven_seg_controller is
 
 begin
 
-    -- refresh counter for multiplexing
+    
     process(clk)
     begin
         if rising_edge(clk) then
@@ -82,7 +82,7 @@ begin
 
     digit_select <= refresh_count(15 downto 13);
 
-    -- choose what all 8 digits should show
+    
     process(round_num, score, show_pass, show_fail, show_win)
         variable tens : integer;
         variable ones : integer;
@@ -126,7 +126,7 @@ begin
         end if;
     end process;
 
-    -- multiplex active digit
+    
     process(digit_select, digits)
     begin
         case digit_select is
