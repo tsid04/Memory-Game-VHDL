@@ -24,13 +24,13 @@ This is our ECE 4250 final project, a Simon-style memory game implemented in VHD
 ## How to Play
 
 1. Press the **start button** to begin.
-2. Watch the **LEDs** — they flash one at a time showing the sequence.
+2. Watch the **LEDs** they flash one at a time showing the sequence.
 3. Flip the **slide switches** one at a time to repeat the sequence back. Each switch lines up directly with the LED above it. Hold a switch for 0.5 seconds to register your input.
 4. The **7-segment display** shows your current round number. After each round it'll flash **PASS**, **FAIL**, or **WIN** depending on how you did.
 5. Hit **reset** at any time to start over.
 
 A few things to know:
-- Only flip **one switch at a time** — multiple switches at once counts as an invalid input.
+- Only flip **one switch at a time** multiple switches at once counts as an invalid input.
 - The sequence starts at 4 steps and grows by 1 each round, capping at 8 steps in round 5.
 - LED flash speed starts at 1 second and gets faster each round, down to 0.3 seconds by round 8.
 - Finishing all 10 rounds makes all the LEDs flash with a WIN message.
